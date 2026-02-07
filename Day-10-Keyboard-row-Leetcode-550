@@ -1,0 +1,26 @@
+class Solution {
+public:
+    vector<string> findWords(vector<string>& words) {
+unordered_map<int,string>hoo={{1,"qwertyuiop"},{2,"asdfghjkl"},{3,"zxcvbnm"}};
+vector<string>hlo;
+for(int i=0;i<words.size();i++){
+    string l=words[i];
+    string d="";
+    for(auto x:l) d+=tolower(x);
+for(auto j:hoo){
+    bool ok=true;
+for(char c : d) {
+    if(j.second.find(c) == string::npos) {
+        ok = false;
+        break;
+    }
+}
+if(ok) hlo.push_back(l);
+    }
+}
+return hlo;
+    }
+};
+Input: words = ["Hello","Alaska","Dad","Peace"]
+
+Output: ["Alaska","Dad"]
