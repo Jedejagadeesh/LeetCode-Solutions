@@ -1,0 +1,24 @@
+class Solution {
+public:
+    int binaryGap(int n) {
+    vector<int>arr;
+    while(n>0){
+    arr.push_back(n&1);
+    n>>=1;
+    }
+    int l=-1;
+    int count=0;
+    for(int i=0;i<arr.size();i++){
+    if(arr[i]==1){
+  if(l!=-1){
+    int mid=i-l;
+       count=max(count,mid); 
+  }
+  l=i;
+    }
+    }
+    return count;
+    }
+};
+Input: n = 22
+Output: 2
