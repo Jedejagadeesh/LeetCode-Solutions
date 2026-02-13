@@ -1,0 +1,34 @@
+class Solution {
+public:
+    int countPrimeSetBits(int left, int right) {
+   int count=0;
+   vector<int>arr;
+   for(int i=left;i<=right;i++){
+    int jagan=i;
+    int x=0;
+    int l=0;
+    while(jagan>0){
+      if(jagan & 1){
+        l++;
+      }
+  jagan=jagan>>1;
+    }
+    arr.push_back(l);
+   }
+for(int i=0;i<arr.size();i++){ 
+    int l=arr[i];
+    if(l<2) continue;
+    bool ist=true;
+for(int j=2;j*j<=l;j++){
+    if(l%j==0){ 
+        ist=false;
+        break;
+    }
+}
+if(ist)count++;
+   }
+   return count;
+    }
+};
+input:->Input: left = 6, right = 10
+output:->4;
