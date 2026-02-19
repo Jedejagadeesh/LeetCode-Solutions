@@ -1,0 +1,15 @@
+code:
+class Solution {
+public:
+    int pivotInteger(int n) {
+     int temp=0;
+     for(int i=1;i<=n;i++){
+       temp+=i;
+     }   
+     int m=sqrt(temp);
+     int l=m*m;
+     return(l==temp?m:-1);
+    }
+};
+Input: n = 8
+Output: 6
