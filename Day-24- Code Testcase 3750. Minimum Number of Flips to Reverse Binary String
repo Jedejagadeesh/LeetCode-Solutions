@@ -1,0 +1,44 @@
+class Solution {
+public:
+    int minimumFlips(int n) {
+        string s="";
+    while(n>0){
+    if(n&1){
+    s+="1";
+    }
+    else{
+    s+="0";
+    }
+    n=n>>1;
+    }
+    string m=s;
+    int count=0;
+    reverse(s.begin(),s.end());
+    for(int i=0;i<s.size();i++){
+     if(m[i]!=s[i])count++;
+    }
+    return count;
+    }
+};
+class Solution {
+public:
+    int minimumFlips(int n) {
+        string s="";
+    while(n>0){
+    if(n&1){
+    s+="1";
+    }
+    else{
+    s+="0";
+    }
+    n=n>>1;
+    }
+    string m=s;
+    int count=0;
+    reverse(s.begin(),s.end());
+    for(int i=0;i<s.size();i++){
+     if(m[i]!=s[i])count++;
+    }
+    return count;
+    }
+};
